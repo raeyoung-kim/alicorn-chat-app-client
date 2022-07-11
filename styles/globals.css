@@ -14,3 +14,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+input {
+  border: 1px solid #d9dfeb;
+  height: 40px;
+  border-radius: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
