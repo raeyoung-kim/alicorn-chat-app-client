@@ -1,0 +1,43 @@
+.section {
+  width: 100%;
+}
+
+.section input {
+  width: 100%;
+}
+
+.section input:focus {
+  outline: none;
+}
+
+.article {
+  padding: 20px 16px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.article:hover {
+  background-color: rgba(195, 194, 194, 0.92);
+}
+
+.article p {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.search_list_wrapper {
+  position: relative;
+}
+
+.search_list_inner {
+  position: absolute;
+  max-height: 40px;
+  width: 100%;
+  background-color: white;
+}
+
+@media (min-width: 600px) {
+  .search_list_inner {
+    min-height: 100%;
+  }
+}

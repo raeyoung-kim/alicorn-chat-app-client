@@ -1,15 +1,14 @@
+import React, { useState } from 'react';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
 import serverAPI from 'services/api';
 import styles from './sign-in.module.css';
-import { useRecoilState } from 'recoil';
-import { userState } from 'services/store';
+import { useUser } from 'services/hooks';
 
 const SignInPage: NextPage = () => {
   const router = useRouter();
-  const [_, setUser] = useRecoilState(userState);
+  const { setUser } = useUser();
   const [form, setForm] = useState({
     userId: '',
     password: '',

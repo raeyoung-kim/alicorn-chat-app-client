@@ -1,0 +1,31 @@
+.article {
+  width: 100%;
+  padding: 10px 16px;
+  border-bottom: 1px solid #d9dfeb;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user strong {
+  font-size: 13;
+  line-height: 2;
+}
+
+.article p {
+  font-size: 14;
+  font-weight: 200;
+}
+
+.content {
+  width: 100%;
+  overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}

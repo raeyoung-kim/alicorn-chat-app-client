@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useRecoilState, useResetRecoilState } from 'recoil';
 import { userState } from 'services/store';
 import serverAPI from 'services/api';
@@ -20,13 +20,14 @@ export const useUser = () => {
     }
   }, [resetUser, setUser]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     getUser();
   }, [getUser]);
 
   return {
     isLoading,
     user,
+    setUser,
     resetUser,
     isLogin: user.userId ? true : false,
   };
