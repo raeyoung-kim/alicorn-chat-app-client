@@ -1,8 +1,11 @@
+import Link from 'next/link';
 import React, { useCallback, useEffect, useState } from 'react';
 import serverAPI from 'services/api';
+import { useUser } from 'services/hooks';
 import styles from './SearchUser.module.css';
 
 const SearchUser: React.FC = () => {
+  const { user } = useUser();
   const [searchText, setSearchText] = useState('');
   const [searchList, setSearchList] = useState<User[]>([]);
 
@@ -38,9 +41,22 @@ const SearchUser: React.FC = () => {
         <div className={styles.search_list_inner}>
           {searchList.map((el) => {
             return (
-              <article key={el.userId} className={styles.article}>
-                <p>{el.name}</p>
-              </article>
+              <Link
+                key={el.userId}
+                href={{
+                  pathname: `message/${user.userId}-${el.userId}`,
+                  query: {
+                    name: el.name,
+                  },
+                }}
+                // href={`message/${user.userId}-${el.userId}?name=${el.name}`}
+              >
+                <a>
+                  <article className={styles.article}>
+                    <p>{el.name}</p>
+                  </article>
+                </a>
+              </Link>
             );
           })}
         </div>

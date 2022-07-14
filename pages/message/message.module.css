@@ -13,6 +13,8 @@
 .chat {
   width: 100%;
   padding: 16px;
+  max-height: 90vh;
+  min-height: 90vh;
 }
 
 .message_list section {
