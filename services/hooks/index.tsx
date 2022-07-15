@@ -4,7 +4,7 @@ import { userState } from 'services/store';
 import serverAPI from 'services/api';
 
 export const useUser = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<null | boolean>(null);
   const [user, setUser] = useRecoilState(userState);
   const resetUser = useResetRecoilState(userState);
   const getUser = useCallback(async () => {

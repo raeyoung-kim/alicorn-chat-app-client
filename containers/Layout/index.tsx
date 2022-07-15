@@ -8,8 +8,8 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
-  const { pathname, push } = useRouter();
-  const { isLogin, user } = useUser();
+  const { pathname, push, query } = useRouter();
+  const { isLoading, isLogin, user } = useUser();
 
   const routePush = useCallback(() => {
     switch (pathname) {
@@ -28,14 +28,25 @@ const Layout: React.FC<Props> = ({ children }) => {
           push('/sign-in');
         }
         break;
+      case '/message/[id]':
+        if (isLogin) {
+          if (query.id && !query.id?.includes(user.userId)) {
+            push('/');
+          }
+        } else {
+          push('/sign-in');
+        }
+        break;
       default:
         return;
     }
-  }, [isLogin, pathname, push]);
+  }, [isLogin, pathname, push, query.id, user.userId]);
 
   useEffect(() => {
-    routePush();
-  }, [routePush]);
+    if (isLoading === false) {
+      routePush();
+    }
+  }, [isLoading, routePush]);
 
   return (
     <>
