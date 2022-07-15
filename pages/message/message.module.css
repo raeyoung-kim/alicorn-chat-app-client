@@ -13,13 +13,12 @@
 .chat {
   width: 100%;
   padding: 16px;
-  max-height: 90vh;
-  min-height: 90vh;
+  height: 90vh;
 }
 
 .message_list section {
   overflow-y: auto;
-  height: 100vh;
+  height: 90vh;
 }
 
 .messagepage_list {

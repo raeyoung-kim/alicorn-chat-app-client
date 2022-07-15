@@ -1,0 +1,28 @@
+.container {
+  overflow: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar{
+  display:none;
+}
+
+.message_wrapper {
+  display: flex;
+  width: 100%;
+  padding: 12px 0px;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0px 8px;
+  white-space: nowrap;
+}
+
+.message {
+  font-size: 14px;
+  font-weight: 200;
+  white-space: pre-wrap;
+}
