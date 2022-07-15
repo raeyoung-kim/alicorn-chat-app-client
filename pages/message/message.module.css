@@ -5,6 +5,10 @@
   margin: 0 auto;
 }
 
+.messagepage_container {
+  height: 95vh;
+}
+
 .message_list {
   display: none;
   border-right: 1px solid #d9dfeb;
@@ -13,12 +17,12 @@
 .chat {
   width: 100%;
   padding: 16px;
-  height: 90vh;
+  height: 95vh;
 }
 
 .message_list section {
   overflow-y: auto;
-  height: 90vh;
+  height: 95vh;
 }
 
 .messagepage_list {
@@ -32,7 +36,7 @@
   top: 50px;
   padding: 16px;
   border-bottom: 1px solid #d9dfeb;
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 @media (min-width: 600px) {
@@ -66,5 +70,6 @@
   .search_user {
     display: block;
     width: 70%;
+    height: 73px;
   }
 }

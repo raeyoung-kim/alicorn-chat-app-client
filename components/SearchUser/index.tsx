@@ -49,7 +49,6 @@ const SearchUser: React.FC = () => {
                     name: el.name,
                   },
                 }}
-                // href={`message/${user.userId}-${el.userId}?name=${el.name}`}
               >
                 <a>
                   <article className={styles.article}>

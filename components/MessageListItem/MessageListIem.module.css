@@ -4,6 +4,10 @@
   border-bottom: 1px solid #d9dfeb;
 }
 
+.article:hover {
+  color: #4e61ff;
+}
+
 .user {
   display: flex;
   justify-content: space-between;

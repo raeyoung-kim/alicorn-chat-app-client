@@ -12,7 +12,8 @@ interface Props {
 const MessageListItem: React.FC<Props> = ({ data }) => {
   const room = `/message/${data.chatId}`;
 
-  const backgroundColor = room === `${location.pathname}` ? '#f2f0ed' : 'white';
+  const backgroundColor =
+    room === `${location.pathname}` ? 'whitesmoke' : 'white';
 
   return (
     <Link href={`${room}?name=${data.name}`}>
