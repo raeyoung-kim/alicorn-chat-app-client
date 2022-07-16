@@ -37,27 +37,32 @@ const SearchUser: React.FC = () => {
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
       />
-      <div className={styles.search_list_wrapper}>
-        <div className={styles.search_list_inner}>
-          {searchList.map((el) => {
-            return (
-              <Link
-                key={el.userId}
-                href={{
-                  pathname: `message/${user.userId}-${el.userId}`,
-                  query: {
-                    name: el.name,
-                  },
-                }}
-              >
-                <a>
-                  <article className={styles.article}>
-                    <p>{el.name}</p>
-                  </article>
-                </a>
-              </Link>
-            );
-          })}
+      <div style={{ position: 'relative', height: 0 }}>
+        <div className={styles.search_list_wrapper}>
+          <div
+            className={styles.search_list_inner}
+            style={{ border: searchList?.length ? '1px solid #ddd' : '' }}
+          >
+            {searchList.map((el) => {
+              return (
+                <Link
+                  key={el.userId}
+                  href={{
+                    pathname: `message/${user.userId}-${el.userId}`,
+                    query: {
+                      name: el.name,
+                    },
+                  }}
+                >
+                  <a>
+                    <article className={styles.article}>
+                      <p>{el.name}</p>
+                    </article>
+                  </a>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

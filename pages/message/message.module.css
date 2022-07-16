@@ -27,7 +27,6 @@
 
 .messagepage_list {
   width: 100%;
-  padding: 16px;
   min-width: 280px;
 }
 
@@ -37,6 +36,7 @@
   padding: 16px;
   border-bottom: 1px solid #d9dfeb;
   background-color: whitesmoke;
+  height: 73px;
 }
 
 @media (min-width: 600px) {
@@ -64,12 +64,23 @@
 
   .messagepage_list section {
     overflow-y: auto;
-    max-height: 90vh;
+    max-height: 95vh;
   }
 
   .search_user {
     display: block;
     width: 70%;
-    height: 73px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    border-left: 1px solid #d9dfeb;
+    border-right: 1px solid #d9dfeb;
+  }
+
+  .messagepage_container {
+    border-left: 1px solid #d9dfeb;
+    border-right: 1px solid #d9dfeb;
   }
 }

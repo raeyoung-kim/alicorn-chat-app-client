@@ -22,17 +22,21 @@ const Header: React.FC<Props> = ({ user }) => {
   };
   return (
     <header className={styles.container}>
-      <div>
-        <IoChatbubblesSharp className={styles.icon} />
-      </div>
-      <div>
-        {user.userId ? (
-          <button onClick={handleLogout}>로그아웃</button>
-        ) : (
-          <Link href={'/sign-in'}>
-            <a>로그인</a>
-          </Link>
-        )}
+      <div className={styles.inner}>
+        <div>
+          <IoChatbubblesSharp className={styles.icon} />
+        </div>
+        <div>
+          {user.userId ? (
+            <button className={styles.button} onClick={handleLogout}>
+              로그아웃
+            </button>
+          ) : (
+            <Link href={'/sign-in'}>
+              <a className={styles.button}>로그인</a>
+            </Link>
+          )}
+        </div>
       </div>
     </header>
   );

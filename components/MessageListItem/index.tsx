@@ -21,7 +21,7 @@ const MessageListItem: React.FC<Props> = ({ data }) => {
         <article className={styles.article} style={{ backgroundColor }}>
           <div className={styles.user}>
             <strong>{data.name}</strong>
-            <p>{data.timestamps.slice(0, 10)}</p>
+            <p className={styles.date}>{data.timestamps.slice(0, 10)}</p>
           </div>
 
           <p className={styles.content}>{data.message}</p>
