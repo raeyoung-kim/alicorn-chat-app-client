@@ -40,11 +40,7 @@ const Chat: React.FC = () => {
   };
 
   useEffect(() => {
-    socket.emit("join", { id: query.id }, ({ error }: any) => {
-      if (error) {
-        alert(error);
-      }
-    });
+    socket.emit("join", { id: query.id });
 
     return () => {
       socket.disconnect();

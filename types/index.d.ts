@@ -5,6 +5,7 @@ type User = {
 };
 
 type Message = {
+  _id?: string,
   chatId: string,
   partnerId: string,
   partnerName: string,

@@ -41,7 +41,9 @@ const SearchUser: React.FC = () => {
         <div className={styles.search_list_wrapper}>
           <div
             className={styles.search_list_inner}
-            style={{ border: searchList?.length ? '1px solid #ddd' : '' }}
+            style={{
+              border: searchList?.length ? '1px solid #ddd' : '1px solid white',
+            }}
           >
             {searchList.map((el) => {
               return (
