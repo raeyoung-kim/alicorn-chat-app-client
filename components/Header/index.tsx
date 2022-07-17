@@ -21,6 +21,7 @@ const Header: React.FC<Props> = ({ user }) => {
       console.error(err);
     }
   };
+
   return (
     <header className={styles.container}>
       <div className={styles.inner}>

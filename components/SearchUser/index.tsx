@@ -19,11 +19,12 @@ const SearchUser: React.FC = () => {
           searchText,
         },
       });
-      setSearchList(data);
+      const result = data.filter((el: User) => el.userId !== user.userId);
+      setSearchList(result);
     } catch (err) {
       console.error(err);
     }
-  }, [searchText]);
+  }, [searchText, user.userId]);
 
   useEffect(() => {
     load();
@@ -42,7 +43,7 @@ const SearchUser: React.FC = () => {
           <div
             className={styles.search_list_inner}
             style={{
-              border: searchList?.length ? '1px solid #ddd' : '1px solid white',
+              border: searchList?.length ? '1px solid #ddd' : 'none',
             }}
           >
             {searchList.map((el) => {

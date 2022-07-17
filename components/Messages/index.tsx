@@ -30,11 +30,20 @@ const Messages: React.FC<Props> = ({ data, height }) => {
               className={styles.name}
               style={{
                 color: el.senderId === user.userId ? '#4e61ff' : 'black',
+                marginLeft: el.senderId === user.userId ? 'auto' : '0px',
               }}
             >
-              {el.senderName}
+              {el.senderId !== user.userId ? el.senderName : null}
             </p>
-            <div className={styles.message}>
+            <div
+              className={styles.message}
+              style={{
+                backgroundColor:
+                  el.senderId === user.userId
+                    ? '#cce2ff'
+                    : 'rgba(0, 0, 0, 0.05)',
+              }}
+            >
               {el.message.replace('\r\n', '<br />')}
             </div>
           </div>
