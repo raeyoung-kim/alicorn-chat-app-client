@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
-import { Header } from 'components';
+import { Header, SEO } from 'components';
 import { useUser } from 'services/hooks';
 import { useRouter } from 'next/router';
 
@@ -50,6 +50,7 @@ const Layout: React.FC<Props> = ({ children }) => {
 
   return (
     <>
+      <SEO title={'CHAT APP'} />
       <Header user={user} />
       {children}
     </>
