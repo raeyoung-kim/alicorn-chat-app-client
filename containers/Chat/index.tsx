@@ -2,16 +2,18 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { useEffect, useState } from "react";
 import styles from "./Chat.module.css";
-import io from "socket.io-client";
+import  { Socket } from "socket.io-client";
 import { useRouter } from "next/router";
 import { useUser } from "services/hooks";
 import { Messages } from "components";
 
-const Chat: React.FC = () => {
+interface Props {
+  socket: Socket
+}
+
+const Chat: React.FC<Props> = ({socket}) => {
   const { query, replace } = useRouter();
   const { user } = useUser();
-
-  const socket = io("http://localhost:8080");
 
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -43,7 +45,6 @@ const Chat: React.FC = () => {
     socket.emit("join", { id: query.id });
 
     return () => {
-      socket.disconnect();
       socket.off();
     };
   }, [query, query.id, socket]);
@@ -59,7 +60,7 @@ const Chat: React.FC = () => {
         }
       }
     });
-  }, [message.length, messages, query.id, query.name, replace, socket]);
+  }, [messages.length, query.id, query.name, replace, socket]);
 
   return (
     <section className={styles.section}>

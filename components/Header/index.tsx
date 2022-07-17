@@ -23,9 +23,11 @@ const Header: React.FC<Props> = ({ user }) => {
   return (
     <header className={styles.container}>
       <div className={styles.inner}>
-        <div>
-          <IoChatbubblesSharp className={styles.icon} />
-        </div>
+        <Link href={'/'}>
+          <a>
+            <IoChatbubblesSharp className={styles.icon} />
+          </a>
+        </Link>
         <div>
           {user.userId ? (
             <button className={styles.button} onClick={handleLogout}>

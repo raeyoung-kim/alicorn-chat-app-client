@@ -2,29 +2,23 @@ import { MessageListItem } from 'components';
 import React, { useEffect, useState } from 'react';
 
 import { useUser } from 'services/hooks';
-import io from 'socket.io-client';
+import { Socket } from 'socket.io-client';
 
-const MessageList = () => {
-  const socket = io('http://localhost:8080');
+interface Props {
+  socket: Socket;
+}
+
+const MessageList: React.FC<Props> = ({ socket }) => {
   const { user } = useUser();
   const [list, setList] = useState<Message[] | null>();
 
   useEffect(() => {
     socket.emit('messageList', { id: user.userId });
-
-    return () => {
-      socket.off();
-    };
   }, [user.userId, socket]);
 
   useEffect(() => {
-    socket.on('message', (data) => {
-      if (!data.chatId) {
-        const find = list?.find((el, i) => el._id !== data[i]._id);
-        if (!list || find) {
-          setList(data);
-        }
-      }
+    socket.on('message_list', (data) => {
+      setList(data);
     });
   }, [list, socket]);
 

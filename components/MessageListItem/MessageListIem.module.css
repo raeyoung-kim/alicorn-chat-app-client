@@ -1,6 +1,6 @@
 .article {
   width: 100%;
-  padding: 10px 16px;
+  padding: 14px 16px;
   border-bottom: 1px solid #d9dfeb;
 }
 
@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 12px;
 }
 
 .user strong {
@@ -35,6 +36,7 @@
 }
 
 .date {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
+  color: #6e7980;
 }
