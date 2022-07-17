@@ -30,3 +30,40 @@
   font-size: 14px;
   font-weight: 300;
 }
+
+.menu {
+  min-width: 100px;
+  height: 100%;
+  text-align: right;
+  cursor: pointer;
+}
+
+.user {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px 12px;
+  font-size: 14px;
+}
+
+.menu_list {
+  position: absolute;
+  font-size: 14px;
+  font-weight: 300;
+  width: 100%;
+  margin: 0px;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 24px;
+}
+
+.menu_list li {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.caret_down {
+  margin-left: 4px;
+  font-size: 10px;
+}
