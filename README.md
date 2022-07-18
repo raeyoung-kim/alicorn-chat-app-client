@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ALICORN 1:1 채팅
 
-## Getting Started
+<div>
+  <img src="https://velog.velcdn.com/images/760kry/post/d8565ee9-84cc-4ee2-b1d4-e82324885405/image.png"/>
+</div>
 
-First, run the development server:
+<br />
 
-```bash
-npm run dev
-# or
-yarn dev
+1:1 대화를 주고 받는 웹 어플리케이션입니다.
+
+
+## Preview
+![](https://velog.velcdn.com/images/760kry/post/8b302b2e-6021-46b9-bdb1-839ba50d4ae3/image.gif)
+
+## Requirements
+- 최신 Chrome Browser의 사용을 권장합니다.
+
+## Install
+### Client
+Root 디렉토리에 `.env.local` 파일을 생성하고 사전에 준비한 server url을 입력합니다.
 ```
+NEXT_PUBLIC_SERVER_API=http://localhost:8080
+```
+```
+git clone https://github.com/raeyoung-kim/alicorn-chat-app-client.git
+npm install
+npm run dev
+```
+### Server
+Root 디렉토리에 `.env` 파일을 생성하고, 사전에 준비한 MongoDB Connection key 를 입력합니다.
+```
+MONGODB_CONNECT=mongodb+srv://alicorn-chat-app:alicorn-chat-app@cluster0.1l01rhs.mongodb.net/?retryWrites=true&w=majority
+JWT_SECRECT_KEY=<JWT_SECRECT_KEY>
+ALLOWED_ORIGIN=http://localhost:3000
+```
+```
+git clone https://github.com/raeyoung-kim/alicorn-chat-app-server.git
+npm install
+npm run dev
+```
+## Skills
+### Client
+- React
+- Next
+- Recoil
+- Javascript
+- Typescript
+- Eslint
+- Socket.io
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Server
+- Node
+- Express
+- Typescript
+- MongoDB
+- Mongoose
+- Eslint
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Project Control
+- Version Control: Git, Github

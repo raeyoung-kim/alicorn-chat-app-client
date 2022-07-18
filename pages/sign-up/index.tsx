@@ -19,6 +19,9 @@ const SignUpPage: NextPage = () => {
     if (form.password !== form.confirmPassword) {
       return alert('비밀번호를 확인해주세요');
     }
+    if (form.password === form.confirmPassword && form.password?.length < 8) {
+      return alert('비밀번호는 8자리 이상이어야 합니다');
+    }
     try {
       await serverAPI.post('/auth/sign-up', {
         userId: form.userId,

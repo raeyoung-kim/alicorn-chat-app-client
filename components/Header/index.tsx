@@ -56,7 +56,7 @@ const Header: React.FC<Props> = ({ user }) => {
             </div>
           ) : (
             <Link href={'/sign-in'}>
-              <a className={styles.button}>로그인</a>
+              <a className={styles.user}>로그인</a>
             </Link>
           )}
         </div>
